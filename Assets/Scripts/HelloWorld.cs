@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HelloWorld : MonoBehaviour
 {
-    [SerializeField] int minimalValue = 1;
-    [SerializeField] int maximalValue = 1000;
+    [SerializeField] private int minimalValue = 1;
+    [SerializeField] private int maximalValue = 1000;
     int guessValue;
+    [SerializeField] private Text label;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,5 +39,6 @@ public class HelloWorld : MonoBehaviour
     {
         guessValue = (minimalValue + maximalValue) / 2;
         print("Is your number " + guessValue + "?");
+        label.text = "Is your number " + guessValue + "?";
     }
 }
